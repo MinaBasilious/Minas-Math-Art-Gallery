@@ -13,37 +13,23 @@
 <link rel="stylesheet" href="{{ 'assets/css/main.css' | absolute_url }}">
 <noscript><link rel="stylesheet" href="{{ 'assets/css/noscript.css' | relative_url }}" /></noscript>
 <style>
-  body {
-      margin: 0; /* Remove default margin from body */
-      padding: 0; /* Remove default padding from body */
-      display: flex; /* Use flexbox layout */
-      flex-wrap: wrap; /* Allow wrapping of images */
-      gap: 0; /* Ensure no gaps between images */
-  }
+.image-container {
+  position: relative; /* Necessary to position the gradient absolutely */
+}
 
-  .image-container {
-      position: relative;
-      flex: 1 1 200px; /* Allow containers to grow/shrink, set a base width */
-      margin: 0; /* Remove any margin from the container */
-      padding: 0; /* Remove any padding from the container */
-  }
+.image-container img {
+  width: 100%; /* Adjust width as needed */
+  height: auto;
+}
 
-  .image-container::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-      pointer-events: none; /* Allows click-through to the image */
-  }
+.gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
 
-  .image-container img {
-      display: block; /* Removes default inline spacing */
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Maintain aspect ratio and cover the container */
-  }
 </style>
 </head>
