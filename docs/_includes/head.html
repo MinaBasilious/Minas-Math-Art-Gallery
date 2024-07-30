@@ -18,14 +18,14 @@
       padding: 0; /* Remove default padding from body */
       display: flex; /* Use flexbox layout */
       flex-wrap: wrap; /* Allow wrapping of images */
+      gap: 0; /* Ensure no gaps between images */
   }
 
   .image-container {
       position: relative;
-      flex: 1 1 auto; /* Allow flex items to grow and shrink as needed */
+      flex: 1 1 200px; /* Allow containers to grow/shrink, set a base width */
       margin: 0; /* Remove any margin from the container */
       padding: 0; /* Remove any padding from the container */
-      min-width: 200px; /* Set a minimum width for the images */
   }
 
   .image-container::before {
@@ -42,9 +42,8 @@
   .image-container img {
       display: block; /* Removes default inline spacing */
       width: 100%;
-      height: 100%; /* Ensure the image covers the container */
+      height: 100%;
       object-fit: cover; /* Maintain aspect ratio and cover the container */
-      vertical-align: bottom; /* Aligns images without extra space */
   }
 </style>
 </head>
