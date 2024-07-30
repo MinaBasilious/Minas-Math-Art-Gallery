@@ -2,32 +2,55 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
   {%- include head.html -%}
+<head>
+  <style>
+    .image-container {
+        position: relative;
+        display: inline-block; /* Adjust as needed */
+    }
 
-  <body class="is-preload">
+    .image-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+        pointer-events: none; /* Allows click-through to the image */
+    }
 
-    <div id="wrapper">
+    .image-container img {
+        display: block; /* Removes default inline-block spacing */
+      div id="wrapper">
 
       {%- include header.html -%}
 
+      <  width: 100%; /* Adjust as needed */
+    }
+  </style>
+</head>
+  <body class="is-preload">
+    <div class="image-container">
       <div id="main">
-        {% for image in site.images %}
-        <article class="thumb">
-          <a href="{{site.baseurl}}/assets/images/fulls/{{ image.path | split: '/' | last | split: '.' | first }}.jpg" class="image">
-            <img src="{{site.baseurl}}/assets/images/thumbs/{{ image.path | split: '/' | last | split: '.' | first }}.jpg" alt="{{ image.title }}" />
-          </a>
-          <h2>{{ image.title }}</h2>
-          <p>{{ image.caption }}</p>
-        </article>
-        {% endfor %}
+          {% for image in site.images %}
+          <article class="thumb">
+            <a href="{{site.baseurl}}/assets/images/fulls/{{ image.path | split: '/' | last | split: '.' | first }}.jpg" class="image">
+              <img src="{{site.baseurl}}/assets/images/thumbs/{{ image.path | split: '/' | last | split: '.' | first }}.jpg" alt="{{ image.title }}" />
+            </a>
+            <h2>{{ image.title }}</h2>
+            <p>{{ image.caption }}</p>
+          </article>
+          {% endfor %}
 
-        <!-- no idea where to put this... -->
-        <!-- {{ content }} -->
+          <!-- no idea where to put this... -->
+          <!-- {{ content }} -->
+        </div>
+
+        {%- include footer.html -%}
+
       </div>
-
-      {%- include footer.html -%}
-
     </div>
-
     <script src="{{ 'assets/js/jquery.min.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/jquery.poptrox.min.js' | relative_url }}"></script>
     <script src="{{ 'assets/js/browser.min.js' | relative_url }}"></script>
