@@ -33,7 +33,8 @@
       {%- include header.html -%}
 
       <div id="main">
-        {% for image in site.images %}
+        <div class="image-container">
+          {% for image in site.images %}
         <article class="thumb">
           <a href="{{site.baseurl}}/assets/images/fulls/{{ image.path | split: '/' | last | split: '.' | first }}.jpg" class="image">
             <img src="{{site.baseurl}}/assets/images/thumbs/{{ image.path | split: '/' | last | split: '.' | first }}.jpg" alt="{{ image.title }}" />
@@ -45,6 +46,8 @@
 
         <!-- no idea where to put this... -->
         <!-- {{ content }} -->
+        </div>
+        
       </div>
 
       {%- include footer.html -%}
