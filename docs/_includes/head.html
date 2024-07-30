@@ -15,6 +15,7 @@
 <style>
   .image-container {
       position: relative;
+      display: inline-block; /* This keeps the images in line with each other */
   }
 
   .image-container::before {
@@ -29,8 +30,9 @@
   }
 
   .image-container img {
-      display: block;
+      display: block; /* Removes default inline spacing */
       width: 100%;
+      vertical-align: bottom; /* Aligns images without extra space */
   }
 </style>
 </head>
