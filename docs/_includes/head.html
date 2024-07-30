@@ -13,9 +13,16 @@
 <link rel="stylesheet" href="{{ 'assets/css/main.css' | absolute_url }}">
 <noscript><link rel="stylesheet" href="{{ 'assets/css/noscript.css' | relative_url }}" /></noscript>
 <style>
+  body {
+      margin: 0; /* Remove default margin from body */
+      padding: 0; /* Remove default padding from body */
+  }
+
   .image-container {
       position: relative;
       display: inline-block; /* This keeps the images in line with each other */
+      margin: 0; /* Remove any margin from the container */
+      padding: 0; /* Remove any padding from the container */
   }
 
   .image-container::before {
