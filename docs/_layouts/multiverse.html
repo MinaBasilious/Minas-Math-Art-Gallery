@@ -22,17 +22,17 @@
 
     .image-container img {
         display: block; /* Removes default inline-block spacing */
-      div id="wrapper">
-
-      {%- include header.html -%}
-
-      <  width: 100%; /* Adjust as needed */
+        width: 100%; /* Adjust as needed */
     }
   </style>
 </head>
   <body class="is-preload">
     <div class="image-container">
-      <div id="main">
+      <div id="wrapper">
+
+        {%- include header.html -%}
+
+        <div id="main">
           {% for image in site.images %}
           <article class="thumb">
             <a href="{{site.baseurl}}/assets/images/fulls/{{ image.path | split: '/' | last | split: '.' | first }}.jpg" class="image">
