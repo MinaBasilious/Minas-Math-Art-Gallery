@@ -2,31 +2,7 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
   {%- include head.html -%}
-<head>
-  <style>
-    .image-container {
-        position: relative;
-        display: inline-block; /* Adjust as needed */
-    }
-
-    .image-container::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-        pointer-events: none; /* Allows click-through to the image */
-    }
-
-    .image-container img {
-        display: block; /* Removes default inline-block spacing */
-        width: 100%; /* Adjust as needed */
-    }
-  </style>
-</head>
-  <body class="is-preload"> 
+ <body class="is-preload"> 
     <div id="wrapper">
 
 
